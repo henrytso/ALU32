@@ -1,4 +1,4 @@
-def shiftZero():
+def shiftTests():
 	f = open('test_shift.txt','w')
 	f.write("B[32] Sa[5] Cin C[32] \n")
 	f.write("#testing all shifts on various numbers, including the smallest and biggest possible number \n")
@@ -6,7 +6,10 @@ def shiftZero():
 		b = bin(i)[2:].rjust(32, '0')
 		for j in range(32):
 			sa = str(j)
-			cOut = b[j:].ljust(32, '0')
+			cOutZero = b[j:].ljust(32, '0')
+			cOutOne = b[j:].ljust(32, '1')
 
-			f.write(b + ' ' + sa + ' 0 ' + cOut + '\n')
+			f.write(b + ' ' + sa + ' 0 ' + cOutZero + '\n')
+			f.write(b + ' ' + sa + ' 1 ' + cOutOne + '\n')
+
 	f.close()
